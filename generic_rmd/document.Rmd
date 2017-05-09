@@ -1,0 +1,30 @@
+---
+title: "Generic Rmd file"
+author: karpfen
+classoption: a4paper
+output:
+    ++output_format++
+---
+
+# People to arrest
+
+## this man
+
+- talks in maths
+- buzzes like fridge
+
+## this girl
+
+- makes me feel ill
+
+# What you get
+
+- When you mess with us 
+
+---
+
+```{r}
+minute <- rep ("i lost myself", 3)
+for (a in minute)
+    print (a)
+```

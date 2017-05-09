@@ -1,0 +1,97 @@
+---
+output: 
+  pdf_document:
+    latex_engine: pdflatex
+    template: svm-latex-cv.tex
+classoption: a4paper
+geometry: margin=2cm
+
+title: "CV"
+author: John Doe
+
+jobtitle: "Job stuff"
+address: "Address 1 · City"
+fontawesome: yes
+email: a@b.com
+github: karpfen
+phone: "123 · 456 · 789"
+# web: www.website.com
+updated: no
+
+keywords: CV, Curriculum Vitae
+
+fontfamily: mathpazo
+#fontfamilyoptions: sc, osf
+fontsize: 12pt
+linkcolor: blue
+urlcolor: blue
+bibliography: cv-refs.bib
+header-includes:
+- \linespread{0.8}
+csl: elsevier-harvard.csl
+---
+---
+nocite: |
+    @patterson2014geography
+---
+
+# Education
+
+**School 1** \hfill \textit{2016}
+
+Passed
+
+**School 2** \hfill \textit{2017}
+
+Passed (barely)
+
+**University** \hfill \textit{2017}
+
+B.Eng. in CV making
+
+**Bachelor Thesis:**
+Yes
+
+***
+
+# Employment
+
+**Big Kahuna Burger** \hfill \textit{January 2012 -- November 2013}
+
+*Internship* \hfill \textit{City}
+
+* Flipping Burgers
+* Frying Fries
+* TCB
+
+\pagebreak
+
+# Technical Skills
+
+**Operating Systems and Software**
+
+* GNU/Linux
+* MS Paint
+
+**Programming Languages**
+
+* R, C++, Logo
+
+**Database Technologies**
+
+* SQLite, PL/pgSQL
+
+**Languages (level)**
+
+* German (a bit)
+* English (also a bit)
+
+***
+
+# Other Interests
+
+Stuff, things
+
+***
+
+# Publications
