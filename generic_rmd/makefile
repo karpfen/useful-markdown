@@ -1,11 +1,13 @@
 RFILE = document
-rep = ++output_format++
 
-ioslides = ioslides_presentation
+rep = ++output_format++
+sp = \n\ \ \ \ \ \ 
+
+ioslides = ioslides_presentation:$(sp)incremental: true
 slidy = slidy_presentation
-pdf = pdf_document:\n    toc: true\n    toc_depth: 2
-html = html_document:\n    highlight: zenburn
-tufte_ho = tufte::tufte_handout:\n    citation_package: natbib
+pdf = pdf_document:$(sp)toc: true$(sp)toc_depth: 2
+html = html_document:$(sp)highlight: zenburn
+tufte_ho = tufte::tufte_handout:$(sp)citation_package: natbib
 tufte_html = tufte::tufte_html: default
 
 pdf:
@@ -21,7 +23,7 @@ ioslides:
 slidy:
 	sed 's/$(rep)/$(slidy)/g' $(RFILE).Rmd > tmp.$(RFILE).Rmd
 	echo "rmarkdown::render('tmp.$(RFILE).Rmd', output_file='$(RFILE).html')" | R --no-save -q
-	#rm tmp.$(RFILE).Rmd
+	rm tmp.$(RFILE).Rmd
 
 html:
 	sed 's/$(rep)/$(html)/g' $(RFILE).Rmd > tmp.$(RFILE).Rmd

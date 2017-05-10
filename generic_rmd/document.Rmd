@@ -19,7 +19,7 @@ output:
 
 # What you get
 
-- When you mess with us 
+![When you mess with us](Rlogo.png)
 
 ---
 
