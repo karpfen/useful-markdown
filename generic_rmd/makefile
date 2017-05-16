@@ -9,6 +9,7 @@ pdf = pdf_document:$(sp)toc: true$(sp)toc_depth: 2
 html = html_document:$(sp)highlight: zenburn
 tufte_ho = tufte::tufte_handout:$(sp)citation_package: natbib
 tufte_html = tufte::tufte_html: default
+md = md_document
 
 pdf:
 	sed 's/$(rep)/$(pdf)/g' $(RFILE).Rmd > tmp.$(RFILE).Rmd
@@ -40,6 +41,11 @@ tufte_handout:
 tufte_html:
 	sed 's/$(rep)/$(tufte_html)/g' $(RFILE).Rmd > tmp.$(RFILE).Rmd
 	echo "rmarkdown::render('tmp.$(RFILE).Rmd', output_file='$(RFILE).html')" | R --no-save -q
+	rm tmp.$(RFILE).Rmd
+
+md:
+	sed 's/$(rep)/$(md)/g' $(RFILE).Rmd > tmp.$(RFILE).Rmd
+	echo "rmarkdown::render('tmp.$(RFILE).Rmd', output_file='$(RFILE).md')" | R --no-save -q
 	rm tmp.$(RFILE).Rmd
 
 clean:
